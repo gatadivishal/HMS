@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>coder college</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    
+</head>
+<body>
+    <form id="frm" runat="server">
+
+    <div id="Header">
+        <ul id="navigation">
+            <li class="active"><a href="#">Home</a></li>
+            <li> <a href="#">About</a></li>
+            <li> <a href="#">Login</a></li>
+            <li> <a href="#">Gallary</a></li>
+            <li> <a href="#">Contact</a></li>
+        </ul>
+    
+    </div>
+
+    <div id="header2">
+        
+         DPS College
+        <div class="banner">
+                <span><b> 
+                    </b> </span>
+            </div>
+        
+    
+    </div>
+
+    <div id="Content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="Menu">
+    <h2>Categories</h2>
+    <ul class="subnav">
+        <li><a href="#">Library</a></li>
+        <li><a href="#">News & Events</a></li>
+        <li><a href="#">Departments</a></li>
+        <li><a href="#">Courses</a></li>
+        <%
+            
+            if (Session["uname"] == null)
+            {
+
+            }
+            else
+            {    
+         %>
+
+         <li><a href="#">Mail</a></li>
+         <li><a href="logout.aspx">Logout</a></li>
+
+    </ul>
+    <%
+            }             
+    %>
+    <p>
+    </p>
+    </div>
+    </form>
+</body>
+</html>
